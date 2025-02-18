@@ -45,6 +45,54 @@ Escreva um código que irá criar um board customizável para acompanhamento de 
 
 3 - O código dever gerar um relatório do board selecionado com o os bloqueios dos cards, com o tempo que ficaram bloqueados e com a justificativa dos bloqueios e desbloqueios.
 
+#### Descrição do Diagrama UML
+
+```mermaid
+classDiagram
+    class Board {
+        int id
+        String nome
+        List<Coluna> colunas
+        +adicionarColuna()
+        +removerColuna()
+        +moverCard()
+    }
+
+    class Coluna {
+        int id
+        String nome
+        int ordem
+        String tipo
+        List<Card> cards
+    }
+
+    class Card {
+        int id
+        String titulo
+        String descricao
+        Date dataCriacao
+        boolean bloqueado
+        +bloquear()
+        +desbloquear()
+    }
+
+    class BancoDeDados {
+        +salvarBoard()
+        +carregarBoard()
+        +excluirBoard()
+    }
+
+    class Relatorio {
+        +gerarRelatorioTempoConclusao()
+        +gerarRelatorioBloqueios()
+    }
+
+    Board "1" -- "*" Coluna
+    Coluna "1" -- "*" Card
+    Board "1" -- "1" BancoDeDados
+    Board "1" -- "1" Relatorio
+```
+
 ##
 
 Projeto desenvolvido durante o [**Bootcamp Bradesco - Java Cloud Native**](https://www.dio.me/bootcamp/bradesco-java-cloud-native), fornecido pela [**DIO**](https://www.dio.me/)
