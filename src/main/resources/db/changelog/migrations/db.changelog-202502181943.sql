@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset junior:202408191938
+--changeset paucinha:202502181943
 --comment: blocks table create
 
 CREATE TABLE BLOCKS(

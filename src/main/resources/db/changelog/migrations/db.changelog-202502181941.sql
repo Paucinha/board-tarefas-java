@@ -1,5 +1,6 @@
 --liquibase formatted sql
---changeset junior:202408191938
+--changeset paucinha:202502181941
+
 --comment: boards_columns table create
 
 CREATE TABLE BOARDS_COLUMNS(
